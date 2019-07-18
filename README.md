@@ -1,5 +1,7 @@
 ![](signature_1.gif)
 
+![(hatch2.gif)]
+
 # Module Project: Advanced Form Management - User Onboarding
 
 ## Project Description

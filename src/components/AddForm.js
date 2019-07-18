@@ -2,7 +2,6 @@ import React from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
-import Swal from 'sweetalert2';
 import styled from 'styled-components';
 import { Button } from '@smooth-ui/core-sc';
 import './AddForm.css';
@@ -12,19 +11,24 @@ function AddForm({ values, errors, touched, isSubmitting }) {
     <FormContainer>
       <Form className='hatch'>
         <div>
+          <h1 className='form-text'>Join The Marines</h1>
           <Field type='text' name='name' placeholder='Your Name' />
           {touched.firstName && errors.firstName && (
             <span className='errors'>{errors.firstName}</span>
           )}
         </div>
         <div>
-          <Field type='email' name='email' placeholder='Email' />
+          <Field type='email' name='email' placeholder='Your Email' />
           {touched.email && errors.email && (
             <span className='errors'>{errors.email}</span>
           )}
         </div>
         <div>
-          <Field type='password' name='password' placeholder='Password' />
+          <Field
+            type='password'
+            name='password'
+            placeholder='Enter Your Password'
+          />
           {touched.password && errors.password && (
             <span className='errors'>{errors.password}</span>
           )}
@@ -89,7 +93,7 @@ export default FormikForm;
 const FormContainer = styled.div`
   width: 500vw;
   max-width: 400px;
-  margin: 200px 680px;
+  margin: 150px 680px;
   padding-top: 6rem;
   form {
     width: 100%;
@@ -146,6 +150,12 @@ const FormContainer = styled.div`
       color: #fff;
       margin-left: 0px;
     }
+
+    .form-text {
+      text-align: center;
+      color: #fff;
+    }
+
     .errors {
       font-size: 0.9rem;
       color: #a9412d;
