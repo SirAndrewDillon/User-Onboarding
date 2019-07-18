@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](signature_1.gif)
 
-## Available Scripts
+# Module Project: Advanced Form Management - User Onboarding
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+We've seen many different styles of form management by now -- simple to complex. Today we are going to unleash your inner form-wizard! 🧙
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Set Up The Project
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- [ ] Start off by installing a blank React app by using Create React App.
+- [ ] Add the following as dependencies inside your React app:
+  - `formik`
+  - `yup`
+  - `axios`
+- [ ] Create a component file called `Form.js`, import it into your `App.js` file, and place the component in your JSX there.
 
-### `npm test`
+## STEP 1 - Create Your Formik Form
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We want to create a form to onboard a new user to our system. We need _at least_ the following pieces of information about our new user:
 
-### `npm run build`
+- Name
+- Email
+- Password
+- Terms of Service (checkbox)
+- A Submit button to send our form data to the server.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## STEP 2 - Implement Form Validation and Error Messaging
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Form validation is one of the facets of an application that makes it feel polished and controlled from a user perspective. With that in mind, implement the following:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Using Yup, set up _at least_ two different validations for each field along with custom error codes that will display on screen when validation fails.
 
-### `npm run eject`
+## STEP 3 - Make a POST Request
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Being able to `POST` data is a key skill of any developer, no matter your skill level.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Craft a `POST` request using `axios` that sends your form data to the following endpoint: _https://reqres.in/api/users_
+- Verify using a `console.log()` that you are receiving a successful response back
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+(Note: For those that are curious, we're using [reqres.in](https://reqres.in/) for this assignment's API. It's a free API that allows us to simulate a `POST` request for any data that we send it. Pretty awesome!)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## STEP 4 - Display Returned Data to Screen
 
-## Learn More
+When you write your `POST` requests in the coming months, you will be manipulating your data in all sorts of cool ways. Today, we will just verify that the information is coming in correctly by using a simple pop-up alert with your returned user data:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Create an alert with the user information using the following syntax: `window.alert(<SERVER RESPONSE GOES HERE>)`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+More information about alerts in JavaScript can be found [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert).
 
-### Code Splitting
+## Stretch Goals
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+The following are stretch goals that you should attempt _after_ you meet MVP for your project:
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Add basic styling to your form in your app. Make it look pretty with any styling method you choose.
+- Implement a dropdown menu in your Formik form.
+- Create 3 new inputs inside your Formik form of your choice along with corresponding validation and error messaging
+- Add to your existing handling so that, if a user inputs their email as `waffle@syrup.com`, they receive an error message in their form that says _"That email is already taken."_

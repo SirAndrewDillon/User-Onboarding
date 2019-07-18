@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-function App() {
+import OnboardForm from './components/OnboardForm';
+
+export default function App() {
+  const [hasAccount, updateHasAccount] = useState('false');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer className='App'>
+      {hasAccount !== 'true' ? (
+        <OnboardForm
+          hasAccount={hasAccount}
+          updateHasAccount={updateHasAccount}
+        />
+      ) : (
+        <div>Account already created.</div>
+      )}
+    </AppContainer>
   );
 }
 
-export default App;
+const AppContainer = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
