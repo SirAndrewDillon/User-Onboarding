@@ -1,8 +1,8 @@
 ![](signature_1.gif)
 
-![(hatch2.gif)]
+![](hatch2.gif)]
 
-# Module Project: Advanced Form Management - User Onboarding
+# Andy Dillon - User Onboarding
 
 ## Project Description
 
