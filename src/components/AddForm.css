@@ -1,0 +1,10 @@
+* {
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0;
+  text-align: center;
+}
+
+Field {
+  padding: 35px;
+}
