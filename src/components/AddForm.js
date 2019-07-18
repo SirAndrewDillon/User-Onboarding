@@ -2,6 +2,7 @@ import React from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 import styled from 'styled-components';
 import { Button } from '@smooth-ui/core-sc';
 import './AddForm.css';
@@ -9,7 +10,7 @@ import './AddForm.css';
 function AddForm({ values, errors, touched, isSubmitting }) {
   return (
     <FormContainer>
-      <Form>
+      <Form className='hatch'>
         <div>
           <Field type='text' name='name' placeholder='Your Name' />
           {touched.firstName && errors.firstName && (
@@ -32,14 +33,16 @@ function AddForm({ values, errors, touched, isSubmitting }) {
           <label>
             <Field type='checkbox' name='tos' />
           </label>
-          <span>I accept the terms of service.</span>
+          <span className='tos-text'>I accept the terms of service.</span>
         </div>
         <p>
           {touched.tos && errors.tos && (
             <span className='errors'>{errors.tos}</span>
           )}
         </p>
-        <Button disabled={isSubmitting}>Submit</Button>
+        <Button className='submit' disabled={isSubmitting}>
+          Submit
+        </Button>
       </Form>
     </FormContainer>
   );
@@ -86,11 +89,12 @@ export default FormikForm;
 const FormContainer = styled.div`
   width: 500vw;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 200px 680px;
   padding-top: 6rem;
   form {
     width: 100%;
-    max-width: 400px;
+    background: url('https://avante.biz/wp-content/uploads/Camouflage-Wallpaper/Camouflage-Wallpaper-044.jpg');
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -137,6 +141,10 @@ const FormContainer = styled.div`
     button {
       margin-top: 1rem;
       align-self: flex-end;
+    }
+    .tos-text {
+      color: #fff;
+      margin-left: 0px;
     }
     .errors {
       font-size: 0.9rem;
