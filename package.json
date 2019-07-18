@@ -5,6 +5,7 @@
   "dependencies": {
     "@smooth-ui/core-sc": "^10.1.0",
     "axios": "^0.19.0",
+    "babel-loader": "^8.0.6",
     "formik": "^1.5.8",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
